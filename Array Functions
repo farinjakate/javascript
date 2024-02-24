@@ -1,0 +1,233 @@
+// 1st way to declare array
+
+//var numbers1 = [];
+//var numbers1 = [40,50,60];
+//document.write(`numbers1 size: ${numbers1.length}<br/>`);
+
+//2nd way to declare array
+
+//var numbers2 = new Array();
+//var numbers2 = new Array(40,50,60,70);
+//document.write(`numbers2 size: ${numbers2.length}<br/>`);
+
+
+//var numbers1 = [40, 50, 60, 'farin', 'fiza'];//adding different type items
+//document.write(`numbers1 size: ${numbers1.length}<br/>`);
+
+//document.write(`*************** ORIGINAL ARRAY **************<br/>`);
+//for (var i = 0; i < numbers1.length; i++) {
+//    document.write(`${numbers1[i]} `);
+//}
+
+//document.write(`<br/>********Adding new items ARRAY ********<br/>`);
+
+//numbers1[5] = 50;
+//for (var i = 0; i < numbers1.length; i++) {
+//    document.write(`${numbers1[i]} `);
+//}
+
+var numbers = [10, 20, 30];
+document.write(`Number of items:${numbers.length}<br/>`);
+
+document.write(`************* ALL ITEMS********<br/>`);
+
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write('<br/>');
+
+//push()-> to add items at the end in the array
+numbers.push(40);
+document.write(`***ALL ITEMS After numbers.push(40)***<br/>`);
+
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+
+document.write('<br/>');
+
+//pop() it returns item from end in the array and remove it
+var item = numbers.pop();
+document.write(`numbers.pop() :${item} <br/>`);
+
+document.write(`***ALL ITEMS AFTER numbers.pop()***<br/>`);
+
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write('<br/>');
+
+//unshift()-> to add items at the beginning in the array
+
+numbers.unshift(40);
+
+document.write(`***ALL ITEMS AFTER numbers.unshift(40) ***<br/>`);
+
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write('<br/>')
+
+
+
+
+numbers.shift(40);
+
+document.write(`***ALL ITEMS AFTER numbers .shift(40) ***<br/>`);
+
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write('<br/>')
+
+//splice()
+//to add items at any position
+//to add multiple items at any position
+//to remove any item from array
+//to remove multiple items from array
+
+//add two items at the beginning
+numbers.splice(0,0,5,6)
+document.write(`***ALL ITEMS AFTER numbers.splice(0,0,40,50)***<br/>`)
+
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write('<br/>');
+
+for (var i = 0; i < numbers.lenght; i++) {
+    dociment.write(`${numbers[i]} `);
+}
+document.write('<br/>');
+
+//add two items in between
+
+numbers.splice(2, 0, 81, 91);
+
+document.write(`***ALL ITEMS AFTER numbers.splice(2, 0, 81, 91)***<br/>`)
+
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]}  `);
+}
+document.write('<br/>');
+
+
+//delete 2 items from 3rd index
+numbers.splice(3, 2);
+document.write(`**** ALL ITEMS AFTER numbers.splice(3,2) ***<br/>`);
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write(`<br/>`);
+
+//add and delete at same time
+numbers.splice(0, 2, 14, 15);
+document.write(`**** ALL ITEMS AFTER numbers.splice(0, 2, 14, 15) ***<br/>`);
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write(`<br/>`);
+
+//add 4 item and remove 1 items
+numbers.splice(0,2,1,2,3,4)
+document.write(`**** ALL ITEMS AFTER numbers.splice(0,2,1,2,3,4) ***<br/>`);
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write(`<br/>`);
+
+
+//remove 1 item from last and add that place 1 item
+numbers.splice(7, 1, 60);
+document.write(`**** ALL ITEMS AFTER numbers.splice(7, 1, 60) ***<br/>`);
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write(`<br/>`);
+
+//add items at position from 3 and remove item at poision 3
+numbers.splice(3,1,100,200,300)
+document.write(`**** ALL ITEMS AFTER numbers.splice(3,1,100,200,300) ***<br/>`);
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write(`<br/>`);
+
+
+//delete 4 items at 7th index and add 4,5,6 
+numbers.splice(7,4,4,5,5,6,)
+document.write(`**** ALL ITEMS AFTER numbers.splice(7,4,4,5,5,6,) ***<br/>`);
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write(`<br/>`);
+
+//to find index or to check whether item exists or not
+
+var index = numbers.indexOf(81);
+document.write(`index of 3 :${index}<br/>`);
+
+index = numbers.indexOf(100);
+document.write(`index of 100 : ${index}<br/>`);
+    
+index = numbers.indexOf(500);
+document.write(`index of 500 : ${index}<br/>`);
+
+index = numbers.lastIndexOf(5);
+document.write(`lastIndex of 5 : ${index}<br/>`);
+
+//reverse
+numbers.reverse();
+document.write(`**** ALL ITEMS AFTER numbers.splice(7,4,4,5,5,6,) ***<br/>`);
+for (var i = 0; i < numbers.length; i++) {
+    document.write(`${numbers[i]} `);
+}
+document.write(`<br/>`);
+
+//sort
+
+var alphabets = ['X', 'E', 'M', 'L', 'J'];
+document.write('*** ALL ALPHABETS ***<br/>');
+for (var i = 0; i < alphabets.length; i++) {
+    document.write(`${alphabets[i]} `);
+}
+document.write('<br/>');
+
+alphabets.sort();
+document.write('*** ALL ALPHABETS AFTER SORT() ***<br/>');
+for (var i = 0; i < alphabets.length; i++) {
+    document.write(`${alphabets[i]} `);
+}
+
+document.write('<br/>');
+var digits = [8, 4, 1, 6, 9, 3];
+document.write('<br/>*** ALL DIGITS***<br/>');
+for (var i = 0; i < digits.length; i++) {
+    document.write(`${digits[i]} `);
+}
+
+document.write('<br/>');
+
+digits.sort(compareLogic);
+
+document.write('*** ALL DIGITS AFTER SORT()***<br/>');
+for (var i = 0; i < digits.lenght; i++) {
+    document.write(`${digit[i]} `);
+}
+
+document.write('<br/>');
+
+function compareLogic(a, b) {
+    if (a > b) {
+        return 1;
+    } else if (a < b) {
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
+
+
+
+
