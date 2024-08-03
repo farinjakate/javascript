@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>send whatsapp message</h2>
+    <table>
+        <tr>
+          <td>phone number </td>
+            <td>
+                <input type="text" id="phone"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>whatsapp message</td>
+            <td>
+                <textarea rows="10" cols="100" id="body"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="button" value="send message" id="btn"/>
+            </td>
+        </tr>
+
+        <tr>
+       <td colspan="2">
+           <label id="result" style="color:red;"></label>
+       </td>
+        </tr>
+
+    </table>
+
+    <script src="Scripts/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $('#btn').click(function () {
+                var phone = $('#phone').val();
+                var body = $('#body').val();
+               
+
+
+                var jsobj = {
+
+                    Phone: phone,
+                    Body: body,
+                    Type: 0
+                    
+                };
+
+                $.ajax({
+                    url: 'http://113.193.63.106:4050/api/WhatsApp',
+                    type: 'POST',
+                    data: JSON.stringify(jsobj),
+                    contentType: 'application / json',
+                    datatype: 'json',
+                    success: function (response) {
+                        $('#result').text('message sent successfully');
+                    },
+                    error: function (error) {
+                        $('#result').text('message sent failed');
+
+                    }
+
+                });
+
+
+            });
+       
+
+
+
+
+        //function generateOTP() {
+        //    // Generate a random 4-digit number
+        //    var otp = Math.floor(1000 + Math.random() * 9000);
+        //    console.log(otp.toString()); // Convert the number to a string
+        //}
+
+        //setInterval(generateOTP, 3000);
+
+        });
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

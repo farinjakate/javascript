@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #mainDiv {
+            border: 1px solid black;
+            color: magenta;
+            padding: 5px;
+            margin: 20px;
+        }
+        #mainDiv *{
+            display:block;
+            border:1px solid black;
+            color:black;
+            padding:5px;
+            margin:20px;
+        }
+     
+    </style>
+</head>
+<body>
+
+    <h2>Parents Demo</h2> 
+    <input type="button" value="click here!" id="btn" />
+    <div id="mainDiv">
+        Main Div
+        <div id="firstDiv">
+            First Div
+        
+        <br />
+        <div>
+            Inner Div
+            <h2>heading 2</h2>
+            <div>div Content</div>
+            <p>Paragraph Text</p>
+            <span>Span Content</span>
+            <a>a tag</a>
+            <h2>heading 2</h2>
+            <h3>heading 3</h3>
+            <span>span Content</span>
+        </div>
+        </div>
+        <div>
+            Second Div
+        </div>
+            
+    </div>
+
+    <script src="Scripts/jquery.min.js"></script>
+    <script>
+    $(function() {
+         $('#btn').click(function () {
+            // $('span').css({ 'color': 'red', 'border': '1px solid red'});
+          // $('span').parent().css({'color': 'red', 'border': '1px solid red'});
+            //$('br').parent().css({ 'color':'blue','border':'2px solid pink' });
+            // $('span').parents().css({ 'color': 'red', 'border': '3px solid green' });
+             //$('span').parentsUntil('#mainDiv').css({ 'color': 'red', 'border': '2px solid green' });
+             // $('#mainDiv').css({ 'color': 'red', 'border': '2px solid green' });
+            // $('#mainDiv').children().css({ 'color': 'red', 'border': '1px solid red' });
+            // $('#mainDiv').find('p').css({ 'color': 'red', 'border': '2px solid red' });
+             //$('#mainDiv').find('span').css({ 'color': 'red', 'border': '2px solid red' });
+             //$('a').siblings().css({ 'color': 'red', 'border': '2px solid red' });
+            // $('a').nextAll().css({ 'color': 'red', 'border': '2px solid red' });
+             //$('a').next().css({ 'color': 'red', 'border': '2px solid red' });
+            // $('a').nextUntil('span').css({ 'color': 'red', 'border': '1px solid red' });
+             //$('a').prev().css({ 'color': 'red', 'border': '1px solid red' });
+            //$('a').prevAll().css({'color':'red','border':'1px solid red'});
+             $('a').prevUntil('div').css({ 'color':'red', 'border': '1px solid red' });
+         });
+    });
+
+  
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

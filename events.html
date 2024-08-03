@@ -3,38 +3,77 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+
+    <script src="Scripts/jquery.min.js"></script>
 </head>
 <body>
-    <h2>Events Demo</h2>
-
-    <!--<input type="button" value="I am a Button" id="btn"
-                  onmouseover="this.style.background='lightgreen'"
-                  onmouseout="this.style.background='none'"/>-->
-    <!--<input type="button" value="I am a Button" id="btn"
-              onmouseover="btnMouseOver()";
-              onmouseout="btnMouseOut()"/>-->
-
-    <input type="text" id="search" />
-
-    <input type="button" value="I am a Button" id="btn" />
-    <hr />
-    <input type="button" value="I am second Button" id="btn1"/>
+    <h2>Event Demo</h2>
+    <input type="text" id="txt"/>
     <br/>
-    Action:
-    <textarea rows="10" cols="70" id="messages"></textarea>
+    <lable id="lbl"></lable>
+    <hr />
+    <input type="button" value="Click me!!!" id="btn"/>
 
-    <div id="div1" style="height:50px;width:100%;background-color:skyblue;border:1px solid red"/>
+    <script>
+
+        //$(function () {
+        //    $('#btn').click(function () {
+        //        $(this).hide();
+        //    });
+            //$('#btn').mouseenter(function () {
+            //    $(this).css('background-color', 'red');
+            //});
+            //$('#btn').mouseleave(function () {
+            //    $(this).css('background-color', 'green');
+            //});
+            ////hover function-> it handle both over & out event
+            //$('#btn').hover(function () {
+            //    $(this).css('color', 'red');
+            //}, function () {
+            //    $(this).css('color', 'black');
+            //});
+
+            //on function->registering multiple events at once
+            //$('#btn').on('click', function () {
+            //    $(this).hide();
+            //});
+            
+        $('#btn').on({
+            click: function () {
+                $(this).css('background-color', 'lightgreen');
+            },
+            mouseenter: function () {
+                $(this).css('color', 'green');
+            },
+            mouseleave: function () {
+                $(this).css('color', 'black');
+            },
+            dblclick: function () {
+                $(this).attr('value', 'You Clicked Me!!');
+            }
+        });
+           
+      //  $('#txt').focus(function () {
+        //        $(this).css('background-color', 'green');
+          //  });
+
+        //$('#txt').blur(function () {
+          //  $(this).css('background-color', 'red');
+       // });
+
+        $('#txt').keyup(function () {
+            var val = $(this).val();
+            $('#lbl').text(val);
+        });
+
+        
+
+        
 
 
 
-
-
-
-    <script src="Scripts/events.js"></script>
-
-
-
-
+            
+    </script>
 
 
 
